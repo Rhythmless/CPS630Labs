@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title> Ricky Cheung's Website - News</title>
+	<link rel="stylesheet" type="text/css" href="./indexstyle.css">
+	</head>
+
+	<body onload ="initMap()">
+		<div id = "header">
+			<header>
+			<h1> Ricky Cheung</h1>
+			</header>
+		</div>	
+		
+	<center>
+
+		<h1 id ="geoHeader"> Geolocation </h1>
+		<h3> Please add user coordinates into the two text boxes first and then drag the text file to the box below or click the "Choose File" button to select a file. </h3>
+		<details>
+		<p> Seriously, add user coordinates first and then drag the file in. This'll break otherwise.</p>
+		</details>
+
+		<form>
+		  <div>
+		    <input type="text" id="inputLat" placeholder="Input User Latitude">
+		    <input type="text" id="inputLong" placeholder="Input User Longitude">
+		  </div>	  
+		</form>
+
+		<button type = "button" id ="submit" onclick = "userLocation()"> Submit User Location </button>
+
+		<form id="dragFile" >
+
+		<div id = "holder"> Drag file to here.</div>
+
+		<input type = "file" name = "file" id = "file" ondrop = "parser(event)">  
+		</form>
+	 
+		<div id="fileLocation"></div> <br/>
+		
+
+			<!--<button type = "button" onclick = "getDistance()"> Calculate Distance </button>
+		<p>Count numbers: <output id="result"></output></p>-->
+		
+		<div id="map">
+			<section>
+			</section>
+		</div>
+		
+	</center>	
+
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWTy9xeHkFSOyE5EN1fXj5YXwTsnwYc6g&callback=initMap"
+	type="text/javascript"></script>
+
+	<script src="./geo.js"></script>
+	<script src="./worker.js"></script>
+	</body>
+</html>
